@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
 
-permission:
+permissions:
   contents: write
   pages: write
   id-token: write
@@ -35,7 +35,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: dist
-          clean: true
-          single-commit: true
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder that contains your production build.
+          clean: true # Automatically remove deleted files from the deploy branch
+          single-commit: true # Squash previous commits into a single commit
