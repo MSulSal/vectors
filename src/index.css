@@ -1,11 +1,9 @@
-/* Ensure the full viewport is used and remove default margins */
 html,
 body {
   height: 100%;
   margin: 0;
 }
 
-/* Center the entire app vertically and horizontally */
 .App {
   display: flex;
   flex-direction: column;
@@ -15,15 +13,19 @@ body {
   font-family: sans-serif;
 }
 
-/* Responsive grid container for the p5 canvas items */
-.canvas-container {
-  width: 90%;
+.canvas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
   max-width: 600px;
   margin: 20px auto;
+}
+
+.canvas-container {
   border: 1px solid #ddd;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
