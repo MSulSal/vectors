@@ -1,3 +1,4 @@
+import Line from "./components/Line";
 import NoVector from "./components/NoVector";
 import Vector from "./components/Vector";
 import Vector3D from "./components/Vector3D";
@@ -18,6 +19,13 @@ const App = () => {
         <div className="canvas-container">
           <p>Bouncing ball, 3D</p>
           <Vector3D />
+        </div>
+        <div className="canvas-container">
+          <p>
+            Line from center to mouse pointer obtained through vector
+            subtraction
+          </p>
+          <Line />
         </div>
       </div>
     </div>
