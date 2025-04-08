@@ -5,6 +5,7 @@ import Scale from "./components/Scale";
 import Vector from "./components/Vector";
 import Vector3D from "./components/Vector3D";
 import Normalize from "./components/Normalize";
+import Velocity from "./components/Velocity";
 
 const App = () => {
   return (
@@ -41,6 +42,10 @@ const App = () => {
         <div className="canvas-container">
           <p>Normalized Vector</p>
           <Normalize />
+        </div>
+        <div className="canvas-container">
+          <p>Velocity with Vectors</p>
+          <Velocity />
         </div>
       </div>
     </div>
