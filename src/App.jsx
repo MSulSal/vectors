@@ -1,4 +1,5 @@
 import Line from "./components/Line";
+import Magnitude from "./components/Magnitude";
 import NoVector from "./components/NoVector";
 import Scale from "./components/Scale";
 import Vector from "./components/Vector";
@@ -31,6 +32,10 @@ const App = () => {
         <div className="canvas-container">
           <p>Scaled Vector</p>
           <Scale />
+        </div>
+        <div className="canvas-container">
+          <p>Bar Representing Magnitude of Vector</p>
+          <Magnitude />
         </div>
       </div>
     </div>
