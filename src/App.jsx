@@ -4,6 +4,7 @@ import NoVector from "./components/NoVector";
 import Scale from "./components/Scale";
 import Vector from "./components/Vector";
 import Vector3D from "./components/Vector3D";
+import Normalize from "./components/Normalize";
 
 const App = () => {
   return (
@@ -36,6 +37,10 @@ const App = () => {
         <div className="canvas-container">
           <p>Bar Representing Magnitude of Vector</p>
           <Magnitude />
+        </div>
+        <div className="canvas-container">
+          <p>Normalized Vector</p>
+          <Normalize />
         </div>
       </div>
     </div>
