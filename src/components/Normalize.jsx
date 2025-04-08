@@ -1,6 +1,6 @@
 import Sketch from "react-p5";
 
-const Magnitude = () => {
+const Normalize = () => {
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
     const canvasHeight = canvasWidth * 0.5;
@@ -34,4 +34,4 @@ const Magnitude = () => {
   return <Sketch setup={setup} draw={draw} />;
 };
 
-export default Magnitude;
+export default Normalize;

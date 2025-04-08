@@ -6,6 +6,7 @@ import Vector from "./components/Vector";
 import Vector3D from "./components/Vector3D";
 import Normalize from "./components/Normalize";
 import Velocity from "./components/Velocity";
+import Acceleration from "./components/Acceleration";
 
 const App = () => {
   return (
@@ -46,6 +47,10 @@ const App = () => {
         <div className="canvas-container">
           <p>Velocity with Vectors</p>
           <Velocity />
+        </div>
+        <div className="canvas-container">
+          <p>Acceleration with Vectors</p>
+          <Acceleration />
         </div>
       </div>
     </div>
