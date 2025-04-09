@@ -3,12 +3,13 @@ import Sketch from "react-p5";
 class Mover {
   constructor(p5) {
     this.p5 = p5;
-    this.position = p5.createVector(p5.random(p5.width), p5.random(p5.height));
+    this.position = p5.createVector();
     this.velocity = p5.createVector(0, 0);
     this.velocity.limit(2);
+    this.t = 0;
     this.acceleration = p5.createVector(
-      p5.random(-0.1, 0.1),
-      p5.random(-0.1, 0.1)
+      this.p5.noise(this.t),
+      this.p5.noise(this.t + 1000)
     );
     this.acceleration.limit(0.1);
   }
@@ -16,10 +17,12 @@ class Mover {
   update() {
     let dt = this.p5.deltaTime;
     let frameIndependentAcceleration = this.p5
-      .createVector(this.p5.random(-0.1, 0.1), this.p5.random(-0.1, 0.1))
-      .mult(dt);
+      .createVector(this.p5.noise(this.t), this.p5.noise(this.t + 1000))
+      .mult(dt)
+      .limit(0.1);
     this.velocity.add(frameIndependentAcceleration);
     this.position.add(this.velocity);
+    this.t += 0.001;
   }
 
   show() {
@@ -51,7 +54,7 @@ class Mover {
 
 let mover;
 
-const Acceleration = () => {
+const Perlin = () => {
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
     const canvasHeight = canvasWidth * 0.5;
@@ -70,4 +73,4 @@ const Acceleration = () => {
   return <Sketch setup={setup} draw={draw} />;
 };
 
-export default Acceleration;
+export default Perlin;
