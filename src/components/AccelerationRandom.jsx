@@ -1,25 +1,24 @@
 import Sketch from "react-p5";
 
-let xlabel, ylabel, xslider, yslider;
-
 class Mover {
   constructor(p5) {
     this.p5 = p5;
     this.position = p5.createVector(p5.random(p5.width), p5.random(p5.height));
     this.velocity = p5.createVector(0, 0);
     this.velocity.limit(2);
-    this.acceleration = p5.createVector(xslider.value(), yslider.value());
+    this.acceleration = p5.createVector(
+      p5.random(-0.1, 0.1),
+      p5.random(-0.1, 0.1)
+    );
   }
 
   update() {
     let dt = this.p5.deltaTime;
     let frameIndependentAcceleration = this.p5
-      .createVector(xslider.value(), yslider.value())
+      .createVector(this.p5.random(-0.1, 0.1), this.p5.random(-0.1, 0.1))
       .mult(dt);
     this.velocity.add(frameIndependentAcceleration);
     this.position.add(this.velocity);
-    xlabel.html("X Acceleration: " + xslider.value());
-    ylabel.html("Y Acceleration: " + yslider.value());
   }
 
   show() {
@@ -57,14 +56,6 @@ const Acceleration = () => {
     const canvasHeight = canvasWidth * 0.5;
     p5.background(255);
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
-    xlabel = p5.createDiv("X Acceleration");
-    xlabel.parent(canvasParentRef);
-    xslider = p5.createSlider(-5, 5, 0, 0.01);
-    yslider = p5.createSlider(-5, 5, 0, 0.01);
-    xslider.parent(canvasParentRef);
-    ylabel = p5.createDiv("Y Acceleration");
-    ylabel.parent(canvasParentRef);
-    yslider.parent(canvasParentRef);
     mover = new Mover(p5);
   };
 

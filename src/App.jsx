@@ -7,6 +7,7 @@ import Vector3D from "./components/Vector3D";
 import Normalize from "./components/Normalize";
 import Velocity from "./components/Velocity";
 import Acceleration from "./components/Acceleration";
+import AccelerationRandom from "./components/AccelerationRandom";
 
 const App = () => {
   return (
@@ -51,6 +52,10 @@ const App = () => {
         <div className="canvas-container">
           <p>Acceleration with Vectors</p>
           <Acceleration />
+        </div>
+        <div className="canvas-container">
+          <p>Random Acceleration with Vectors</p>
+          <AccelerationRandom />
         </div>
       </div>
     </div>
