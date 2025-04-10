@@ -10,6 +10,7 @@ import Acceleration from "./components/Acceleration";
 import AccelerationRandom from "./components/AccelerationRandom";
 import Perlin from "./components/Perlin";
 import Mouse from "./components/Mouse";
+import Gravity from "./components/Gravity";
 
 const App = () => {
   return (
@@ -64,8 +65,14 @@ const App = () => {
           <Perlin />
         </div>
         <div className="canvas-container">
-          <p>Acceleration int the direction of the mouse pointer</p>
+          <p>Acceleration in the direction of the mouse pointer</p>
           <Mouse />
+        </div>
+        <div className="canvas-container">
+          <p>
+            Gravitational Acceleration in the direction of the mouse pointer
+          </p>
+          <Gravity />
         </div>
       </div>
     </div>
