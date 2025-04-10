@@ -18,7 +18,6 @@ class Mover {
     let frameIndependentAcceleration = dir.mult(dt).limit(0.1);
     this.velocity.add(frameIndependentAcceleration);
     this.position.add(this.velocity);
-    console.log(this.position);
   }
 
   show() {
