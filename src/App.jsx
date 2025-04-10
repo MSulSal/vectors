@@ -9,6 +9,7 @@ import Velocity from "./components/Velocity";
 import Acceleration from "./components/Acceleration";
 import AccelerationRandom from "./components/AccelerationRandom";
 import Perlin from "./components/Perlin";
+import Mouse from "./components/Mouse";
 
 const App = () => {
   return (
@@ -61,6 +62,10 @@ const App = () => {
         <div className="canvas-container">
           <p>Random Acceleration based on Perlin Noise</p>
           <Perlin />
+        </div>
+        <div className="canvas-container">
+          <p>Acceleration int the direction of the mouse pointer</p>
+          <Mouse />
         </div>
       </div>
     </div>

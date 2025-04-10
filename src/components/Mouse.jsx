@@ -3,23 +3,22 @@ import Sketch from "react-p5";
 class Mover {
   constructor(p5) {
     this.p5 = p5;
-    this.position = p5.createVector(p5.random(p5.width), p5.random(p5.height));
+    this.position = p5.createVector(this.p5.width / 2, this.p5.height / 2);
     this.velocity = p5.createVector(0, 0);
-    this.velocity.limit(0.1);
-    this.acceleration = p5.createVector(
-      p5.random(-0.1, 0.1),
-      p5.random(-0.1, 0.1)
-    );
+    this.velocity.limit(2);
+    this.acceleration = p5.createVector(0, 0);
     this.acceleration.limit(0.1);
   }
 
   update() {
-    let dt = this.p5.deltaTime;
-    let frameIndependentAcceleration = this.p5
-      .createVector(this.p5.random(-0.1, 0.1), this.p5.random(-0.1, 0.1))
-      .mult(dt);
+    let mouse = this.p5.createVector(this.p5.mouseX, this.p5.mouseY);
+    let dir = mouse.copy().sub(this.position);
+    dir.normalize();
+    let dt = this.p5.deltaTime / 1000;
+    let frameIndependentAcceleration = dir.mult(dt).limit(0.1);
     this.velocity.add(frameIndependentAcceleration);
     this.position.add(this.velocity);
+    console.log(this.position);
   }
 
   show() {
@@ -51,7 +50,7 @@ class Mover {
 
 let mover;
 
-const Acceleration = () => {
+const Mouse = () => {
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
     const canvasHeight = canvasWidth * 0.5;
@@ -70,4 +69,4 @@ const Acceleration = () => {
   return <Sketch setup={setup} draw={draw} />;
 };
 
-export default Acceleration;
+export default Mouse;
