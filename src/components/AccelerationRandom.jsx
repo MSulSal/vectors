@@ -23,28 +23,28 @@ class Mover {
   }
 
   show() {
-    this.p5.stroke(0);
+    this.p5.stroke(0, 255, 0);
     this.p5.strokeWeight(2);
-    this.p5.fill(127);
+    this.p5.fill(0, 255, 0);
     this.p5.circle(this.position.x, this.position.y, 48);
   }
 
   checkEdges() {
-    if (this.position.x > this.p5.width) {
-      this.position.x = this.p5.width - 48;
-      this.velocity.x *= -1;
+    if (this.position.x > this.p5.width + 24) {
+      this.position.x = -24;
+      // this.velocity.x *= -1;
     }
-    if (this.position.x < 0) {
-      this.position.x = 48;
-      this.velocity.x *= -1;
+    if (this.position.x < -24) {
+      this.position.x = this.p5.width + 24;
+      // this.velocity.x *= -1;
     }
 
-    if (this.position.y > this.p5.height) {
-      this.position.y = this.p5.height - 48;
-      this.velocity.y *= -1;
-    } else if (this.position.y < 0) {
-      this.position.y = 48;
-      this.velocity.y *= -1;
+    if (this.position.y > this.p5.height + 24) {
+      this.position.y = -24;
+      // this.velocity.y *= -1;
+    } else if (this.position.y < -24) {
+      this.position.y = this.p5.height + 24;
+      // this.velocity.y *= -1;
     }
   }
 }

@@ -33,9 +33,9 @@ class Mover {
   }
 
   show() {
-    this.p5.stroke(0);
+    this.p5.stroke(0, 255, 0);
     this.p5.strokeWeight(2);
-    this.p5.fill(127);
+    this.p5.fill(0, 255, 0);
     this.p5.circle(this.position.x, this.position.y, 48);
   }
 

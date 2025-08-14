@@ -7,7 +7,6 @@ const Vector = () => {
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
     const canvasHeight = canvasWidth * 0.5;
-    p5.background(255);
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
     position = p5.createVector(100, 100);
     velocity = p5.createVector(2.5, 2);
@@ -22,7 +21,7 @@ const Vector = () => {
       velocity.y *= -1;
     }
     p5.stroke(0);
-    p5.fill(127);
+    p5.fill(0, 255, 0);
     p5.circle(position.x, position.y, 48);
   };
 

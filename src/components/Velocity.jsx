@@ -20,9 +20,9 @@ class Mover {
   }
 
   show() {
-    this.p5.stroke(0);
+    this.p5.stroke(0, 255, 0);
     this.p5.strokeWeight(2);
-    this.p5.fill(127);
+    this.p5.fill(0, 255, 0);
     this.p5.circle(this.position.x, this.position.y, 48);
   }
 
@@ -52,8 +52,8 @@ const Velocity = () => {
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
     xlabel = p5.createDiv("X Velocity");
     xlabel.parent(canvasParentRef);
-    xslider = p5.createSlider(-5, 5, 0, 0.1);
-    yslider = p5.createSlider(-5, 5, 0, 0.1);
+    xslider = p5.createSlider(-1, 1, 0, 0.01);
+    yslider = p5.createSlider(-1, 1, 0, 0.01);
     xslider.parent(canvasParentRef);
     ylabel = p5.createDiv("Y Velocity");
     ylabel.parent(canvasParentRef);

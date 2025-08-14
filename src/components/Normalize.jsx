@@ -20,7 +20,7 @@ const Normalize = () => {
       mouse.y < p5.height / 2
     ) {
       p5.translate(p5.width / 2, p5.height / 2);
-      p5.stroke(200);
+      p5.stroke(0, 200, 0);
       p5.line(0, 0, mouse.x, mouse.y);
       mouse.normalize();
       mouse.mult(50);

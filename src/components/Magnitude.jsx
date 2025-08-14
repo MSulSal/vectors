@@ -7,7 +7,7 @@ const Magnitude = () => {
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
     const canvasHeight = canvasWidth * 0.5;
-    p5.background(255);
+    p5.background(0);
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
     scaleSlider = p5.createSlider(0, 2, 1, 0.01);
     label = p5
@@ -30,10 +30,12 @@ const Magnitude = () => {
       mouse.y < p5.height / 2
     ) {
       let m = mouse.mag() * 2 * scaleSlider.value();
-      p5.fill(0);
+      p5.fill(0, 255, 0);
       p5.rect(0, 0, m, 10);
 
       p5.translate(p5.width / 2, p5.height / 2);
+      p5.stroke(0, 255, 0);
+      p5.strokeWeight(10);
       p5.line(0, 0, mouse.x, mouse.y);
     }
   };

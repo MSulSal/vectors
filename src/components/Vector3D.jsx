@@ -17,7 +17,7 @@ const Vector3D = () => {
   };
 
   const draw = (p5) => {
-    p5.background(255);
+    p5.background(0);
     if (
       p5.mouseX > 0 &&
       p5.mouseX < p5.width &&
@@ -50,13 +50,13 @@ const Vector3D = () => {
 
     p5.push();
     p5.noFill();
-    p5.stroke(0);
+    p5.stroke(0, 255, 0);
     p5.box(boxSize);
     p5.pop();
 
     p5.push();
     p5.translate(position.x, position.y, position.z);
-    p5.fill(127);
+    p5.fill(0, 255, 0);
     p5.noStroke();
     p5.sphere(sphereRadius);
     p5.pop();

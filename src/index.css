@@ -3,6 +3,8 @@ html,
 body {
   height: 100%;
   margin: 0;
+  background-color: black;
+  color: #00ff00;
 }
 
 /* Center the entire app vertically and horizontally */

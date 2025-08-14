@@ -21,9 +21,9 @@ class Mover {
   }
 
   show() {
-    this.p5.stroke(0);
+    this.p5.stroke(0, 255, 0);
     this.p5.strokeWeight(2);
-    this.p5.fill(127);
+    this.p5.fill(0, 255, 0);
     this.p5.circle(this.position.x, this.position.y, 48);
   }
 
@@ -53,7 +53,7 @@ const Mouse = () => {
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
     const canvasHeight = canvasWidth * 0.5;
-    p5.background(255);
+    p5.background(0);
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
     mover = new Mover(p5);
   };

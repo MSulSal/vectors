@@ -31,10 +31,10 @@ const Scale = () => {
     ) {
       p5.translate(p5.width / 2, p5.height / 2, mouse, 0.5);
       p5.strokeWeight(2);
-      p5.stroke(200);
+      p5.stroke(0, 100, 0, 50);
       p5.line(0, 0, mouse.x, mouse.y);
       mouse.mult(scaleSlider.value());
-      p5.stroke(0);
+      p5.stroke(0, 255, 0);
       p5.strokeWeight(4);
       p5.line(0, 0, mouse.x, mouse.y);
     }
